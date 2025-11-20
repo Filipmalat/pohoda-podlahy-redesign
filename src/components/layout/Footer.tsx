@@ -23,13 +23,7 @@ const Footer = () => {
                 Renovace podlah
               </Link>
               <Link to="/sluzby/pokladka-vinylu" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Pokládka vinylu a laminátu
-              </Link>
-              <Link to="/sluzby/brouseni-parket" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Broušení parket
-              </Link>
-              <Link to="/sluzby/vysotlake-cisteni" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Vysokotlaké čištění
+                Pokládka podlah
               </Link>
             </nav>
           </div>
