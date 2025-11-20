@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
@@ -78,8 +79,43 @@ const RenovacePodlah = () => {
           </div>
         </section>
 
-        {/* Výhody */}
+        {/* Ceník */}
         <section className="py-20 bg-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center">Ceník renovace parket</h2>
+              <Card>
+                <CardContent className="p-6">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Služba</TableHead>
+                        <TableHead className="text-right">Cena od</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Broušení parket</TableCell>
+                        <TableCell className="text-right">od 330 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Tmelení</TableCell>
+                        <TableCell className="text-right">od 90 Kč/m² (2 vrstvy od 140 Kč/m²)</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Nanesení ochranné vrstvy - olej/lak (2 vrstvy)</TableCell>
+                        <TableCell className="text-right">310 Kč/m²</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Výhody */}
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">Výhody profesionální renovace podlah</h2>
             <div className="grid md:grid-cols-3 gap-8">

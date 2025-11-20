@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
@@ -104,65 +105,66 @@ const PokladkaVinylu = () => {
           </div>
         </section>
 
+        {/* Ceník */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">Proces pokládky vinylové podlahy</h2>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Příprava podkladu</h3>
-                    <p className="text-muted-foreground">
-                      Důkladná příprava podkladu je základ úspěšné pokládky vinylu. Vyrovnáme nerovnosti, 
-                      očistíme povrch a zajistíme optimální podmínky pro instalaci.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Aklimatizace materiálu</h3>
-                    <p className="text-muted-foreground">
-                      Před pokládkou necháváme materiál aklimatizovat v prostředí, kde bude instalován. 
-                      Zaručíme tím dlouhodobou stabilitu podlahy.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Profesionální instalace</h3>
-                    <p className="text-muted-foreground">
-                      Pokládka vinylové podlahy Praha probíhá s maximální precizností. Dbáme na správné 
-                      dilatační spáry a perfektní spojení jednotlivých dílů.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Finální úpravy</h3>
-                    <p className="text-muted-foreground">
-                      Po dokončení pokládky provedeme instalaci soklů a přechodových lišt. 
-                      Vše důkladně zkontrolujeme a předáme k užívání.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center">Ceník</h2>
+              <Card>
+                <CardContent className="p-6">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Služba</TableHead>
+                        <TableHead className="text-right">Cena od</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Pokládka lepeného vinylu</TableCell>
+                        <TableCell className="text-right">275 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Pokládka click vinylu</TableCell>
+                        <TableCell className="text-right">235 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Pokládka laminátové podlahy</TableCell>
+                        <TableCell className="text-right">235 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Pokládka dřevěné podlahy se zámky</TableCell>
+                        <TableCell className="text-right">235 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Pokládka lepené dřevěné podlahy</TableCell>
+                        <TableCell className="text-right">295 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Montáž lišt</TableCell>
+                        <TableCell className="text-right">80 Kč/m</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Nivelace</TableCell>
+                        <TableCell className="text-right">od 185 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Penetrace a příprava podkladu</TableCell>
+                        <TableCell className="text-right">od 45 Kč/m²</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="font-semibold">Zaměření</TableCell>
+                        <TableCell className="text-right font-semibold">Zdarma</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-section">
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <Card className="bg-primary text-primary-foreground">
               <CardContent className="p-8 md:p-12">
