@@ -11,7 +11,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">DOMÁCÍ POHODA</h3>
             <p className="text-muted-foreground text-sm">
               Profesionální renovace podlah, pokládka vinylové podlahy a laminátu, 
-              broušení parket a vysokotlaké čištění v Praze a okolí do 40 km.
+              broušení parket v Praze a okolí.
             </p>
           </div>
 
