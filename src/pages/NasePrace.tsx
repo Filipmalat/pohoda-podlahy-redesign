@@ -9,59 +9,38 @@ import pokladkaVinyl1 from "@/assets/pokladka-vinyl-1.jpg";
 import brouseniStroj from "@/assets/brouseni-stroj.jpg";
 import renovaceObyvak1 from "@/assets/renovace-obyvak-1.jpg";
 import pokladkaVinyl2 from "@/assets/pokladka-vinyl-2.jpg";
-import renovaceObyvak2 from "@/assets/renovace-obyvak-2.jpg";
 import renovaceKuchyn from "@/assets/renovace-kuchyn.jpg";
-import renovaceRybiKost from "@/assets/renovace-rybi-kost.jpg";
 
 const NasePrace = () => {
   const projects = [
     {
-      title: "Renovace masivní podlahy - Před a Po",
-      location: "Praha",
-      description: "Kompletní renovace staré masivní podlahy včetně broušení a lakování. Podlaha získala zcela nový život a vypadá jako nová.",
+      title: "Renovace masivní podlahy",
       image: renovacePredPo,
       service: "Renovace podlah",
     },
     {
       title: "Pokládka vinylové podlahy",
-      location: "Praha",
-      description: "Instalace kvalitní vinylové podlahy v celém bytě. Moderní design imitující dřevo.",
       image: pokladkaVinyl1,
       service: "Pokládka podlah",
     },
     {
       title: "Broušení parket",
-      location: "Praha",
-      description: "Profesionální broušení parketových podlah moderní bruskou. Používáme špičkovou techniku pro dokonalý výsledek.",
       image: brouseniStroj,
       service: "Renovace podlah",
     },
     {
       title: "Renovace parket v obývacím pokoji",
-      location: "Praha",
-      description: "Renovace dubových parket včetně lakování. Obnovení lesku a ochrany dřevěné podlahy.",
       image: renovaceObyvak1,
       service: "Renovace podlah",
     },
     {
-      title: "Pokládka vinylové podlahy šedé",
-      location: "Praha",
-      description: "Instalace moderní vinylové podlahy v šedém odstínu. Elegantní řešení pro moderní interiér.",
+      title: "Pokládka vinylové podlahy",
       image: pokladkaVinyl2,
       service: "Pokládka podlah",
     },
     {
-      title: "Renovace parket s velkými okny",
-      location: "Praha",
-      description: "Kompletní renovace parketové podlahy ve světlém bytě. Perfektní sladění s moderním interiérem.",
-      image: renovaceObyvak2,
-      service: "Renovace podlah",
-    },
-    {
-      title: "Renovace parket rybí kost",
-      location: "Praha",
-      description: "Profesionální renovace parket vzor rybí kost. Obnovení klasického vzoru a lesku dřevěné podlahy.",
-      image: renovaceRybiKost,
+      title: "Renovace kuchyň",
+      image: renovaceKuchyn,
       service: "Renovace podlah",
     },
   ];
@@ -99,10 +78,6 @@ const NasePrace = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-5xl font-bold mb-6">Naše práce</h1>
-              <p className="text-xl opacity-90">
-                Podívejte se na ukázky našich realizací. Každý projekt je pro nás příležitostí 
-                ukázat náš um a profesionalitu. Spokojení zákazníci jsou naší největší odměnou.
-              </p>
             </div>
           </div>
         </section>
@@ -110,19 +85,17 @@ const NasePrace = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">Realizované projekty</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <img 
                     src={project.image} 
                     alt={`${project.title} - ${project.service}`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-80 object-cover"
                   />
                   <CardContent className="p-6">
                     <div className="text-sm text-primary font-semibold mb-2">{project.service}</div>
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{project.location}</p>
-                    <p className="text-muted-foreground">{project.description}</p>
+                    <h3 className="text-xl font-bold">{project.title}</h3>
                   </CardContent>
                 </Card>
               ))}
