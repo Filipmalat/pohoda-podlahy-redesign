@@ -12,7 +12,7 @@ const Index = () => {
   const services = [
     {
       title: "Renovace podlah",
-      description: "Profesionální renovace dřevěných podlah s dlouholetou zkušeností. Obnovíme staré parkety a vrátíme jim původní krásu.",
+      description: "Profesionální renovace dřevěných podlah.",
       icon: Hammer,
       link: "/sluzby/renovace-podlah",
       image: renovacePredPo,
@@ -55,7 +55,7 @@ const Index = () => {
                 Profesionální pokládka a renovace podlah Praha
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Renovace a pokládka podlah. Praha a okolí do 40 km.
+                Renovace a pokládka podlah. Praha a okolí.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="tel:+420736673508">
@@ -80,7 +80,7 @@ const Index = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">Naše služby</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Nabízíme komplexní péči o vaše podlahy a venkovní povrchy s důrazem na kvalitu a spolehlivost.
+                Nabízíme komplexní péči o vaše podlahy s důrazem na kvalitu a spolehlivost.
               </p>
             </div>
 
@@ -109,10 +109,6 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl font-bold mb-6">Proč si vybrat DOMÁCÍ POHODU?</h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Jsme firma s dlouholetou tradicí a stovkami spokojených zákazníků v Praze a okolí. 
-                  Specializujeme se na renovace podlah, pokládku vinylové podlahy Praha a broušení parket Praha.
-                </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center gap-2">
