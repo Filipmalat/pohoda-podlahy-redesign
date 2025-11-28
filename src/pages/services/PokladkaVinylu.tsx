@@ -8,29 +8,31 @@ import Footer from "@/components/layout/Footer";
 import vinylImage from "@/assets/vinyl-installation.jpg";
 
 const PokladkaVinylu = () => {
-  const benefits = [
-    "Odolnost proti vlhkosti a vodě",
+  const vinylBenefits = [
     "Snadná údržba a čištění",
     "Široká škála designů a barev",
     "Tichá chůze díky tlumicím vlastnostem",
-    "Dlouhá životnost (15-25 let)",
     "Vhodné pro podlahové vytápění",
   ];
 
-  const types = [
-    {
-      title: "Vinylové lamely",
-      description: "Click systém umožňující rychlou a jednoduchou instalaci. Ideální pro DIY projekty i profesionální pokládku.",
-    },
-    {
-      title: "Vinylové desky",
-      description: "Luxusní vzhled s vysokou odolností. Perfektní volba pro obchodní prostory i domácnosti.",
-    },
-    {
-      title: "Laminátové podlahy",
-      description: "Ekonomická alternativa s přirozeným vzhledem dřeva. Vhodné pro všechny typy interiérů.",
-    },
+  const laminatBenefits = [
+    "Vysoká odolnost proti poškrábání",
+    "Jednoduchá a rychlá pokládka (plovoucím způsobem)",
+    "Široká nabídka dekorů",
+    "Výborný poměr cena/výkon",
+    "Snadná údržba",
+    "Dobrá kompatibilita s podlahovým vytápěním",
   ];
+
+  const woodBenefits = [
+    "Přirozený a luxusní vzhled",
+    "Dlouhá životnost – možnost opakované renovace",
+    "Výborné tepelně-izolační vlastnosti",
+    "Příjemný pocit při chůzi",
+    "Zvyšuje hodnotu nemovitosti",
+    "Vhodné pro podlahové vytápění (u vícevrstvých podlah)",
+  ];
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -40,10 +42,9 @@ const PokladkaVinylu = () => {
         <section className="bg-hero-gradient text-primary-foreground py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-5xl font-bold mb-6">Pokládka vinylu a laminátu Praha</h1>
+              <h1 className="text-5xl font-bold mb-6">Pokládka podlah Praha</h1>
               <p className="text-xl mb-8 opacity-90">
-                Odborná pokládka vinylové podlahy a laminátu v Praze a okolí. Rychlá instalace, 
-                profesionální přístup a záruka kvality za férové ceny.
+                Odborná pokládka vinylové, dřevěné a laminátové podlahy v Praze a okolí. Rychlá instalace, profesionální přístup a záruka kvality za férové ceny.
               </p>
               <a href="tel:+420736673508">
                 <Button variant="outline" size="xl" className="bg-background text-foreground hover:bg-background/90">
@@ -68,16 +69,16 @@ const PokladkaVinylu = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Proč zvolit vinylovou podlahu?</h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Pokládka vinylové podlahy Praha je moderní řešení pro každý interiér. Vinyl kombinuje 
+                  Pokládka vinylové podlahy je moderní řešení pro každý interiér. Vinyl kombinuje 
                   estetiku přírodních materiálů s praktičností a odolností syntetických podlah.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Vinylové podlahy jsou ideální volbou pro koupelny, kuchyně i obývací prostory. 
-                  Díky své odolnosti vůči vlhkosti a snadné údržbě jsou oblíbenou volbou pro domácnosti 
-                  s dětmi i domácími mazlíčky.
+                  Vinylové podlahy jsou ideální volbou pro kuchyně i obývací prostory. 
+                  Díky své odolnosti vůči vlhkosti a snadné údržbě jsou oblíbenou volbou pro domácnosti i komerční prostory.
                 </p>
-                <div className="space-y-3">
-                  {benefits.map((benefit, index) => (
+                <div className="space-y-3 mb-8">
+                  <h3 className="font-semibold">Výhody vinylu:</h3>
+                  {vinylBenefits.map((benefit, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                       <span>{benefit}</span>
@@ -91,25 +92,77 @@ const PokladkaVinylu = () => {
 
         <section className="py-20 bg-section">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Typy podlah, které pokládáme</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {types.map((type, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">{type.title}</h3>
-                    <p className="text-muted-foreground">{type.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-12">
+                <h2 className="text-3xl font-bold mb-6">Proč zvolit laminátovou podlahu?</h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Pokládka laminátové podlahy je cenově dostupné a přitom velmi praktické řešení pro moderní interiéry. Laminát dokáže věrně imitovat dřevo, kámen i další přírodní materiály, a to za zlomek ceny.
+                </p>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Laminátové podlahy jsou ideální volbou pro obývací pokoje, chodby i ložnice. Díky své tvrdosti a odolnosti proti poškrábání jsou vhodné do domácností s vyšším provozem.
+                </p>
+                <div className="space-y-3 mb-8">
+                  <h3 className="font-semibold">Výhody laminátu:</h3>
+                  {laminatBenefits.map((benefit, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Proč zvolit dřevěnou podlahu?</h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Pokládka dřevěné podlahy je investice do krásy, přirozenosti a dlouhé životnosti. Dřevo přináší do interiéru teplo a eleganci, kterou žádný syntetický materiál nedokáže zcela nahradit.
+                </p>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Dřevěné podlahy jsou ideální volbou pro obývací pokoje, ložnice i reprezentativní prostory. Lze je opakovaně renovovat, takže mohou sloužit desítky let.
+                </p>
+                <div className="space-y-3">
+                  <h3 className="font-semibold">Výhody dřeva:</h3>
+                  {woodBenefits.map((benefit, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">Typy podlah, které pokládáme</h2>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold">Vinylové lamely</h3>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold">Laminátové podlahy</h3>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold">Dřevěné podlahy</h3>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Ceník */}
-        <section className="py-20">
+        <section className="py-20 bg-section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold mb-8 text-center">Ceník</h2>
+              <p className="text-center text-muted-foreground mb-6">*Ceny neobsahují materiál</p>
               <Card>
                 <CardContent className="p-6">
                   <Table>
