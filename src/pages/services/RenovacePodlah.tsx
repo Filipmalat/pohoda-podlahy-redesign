@@ -9,12 +9,10 @@ import beforeAfterImage from "@/assets/renovace-pred-po-main.jpg";
 
 const RenovacePodlah = () => {
   const process = [
-    "Prohlídka a konzultace na místě",
-    "Příprava podkladu a odstranění starého nátěru",
-    "Vyrovnání nerovností a oprava poškozených míst",
-    "Broušení a leštění povrchu",
-    "Aplikace ochranné vrstvy (lak, olej, vosk)",
-    "Finální úprava a kontrola kvality",
+    "Vícekrokové broušení",
+    "Tmelení spár",
+    "Finální přebroušení",
+    "Aplikace ochraných vrstev (lak, olej)",
   ];
 
   return (
@@ -29,7 +27,7 @@ const RenovacePodlah = () => {
               <h1 className="text-5xl font-bold mb-6">Renovace podlah Praha</h1>
               <p className="text-xl mb-8 opacity-90">
                 Profesionální renovace dřevěných podlah, která vrátí vašim starým parketám a podlahám jejich původní krásu a eleganci. 
-                Specializujeme se na renovace podlah Praha a okolí do 40 km.
+                Specializujeme se na renovace podlah Praha a okolí.
               </p>
               <a href="tel:+420736673508">
                 <Button variant="outline" size="xl" className="bg-background text-foreground hover:bg-background/90">
@@ -53,8 +51,7 @@ const RenovacePodlah = () => {
                   obnovit i velmi poškozené podlahy.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Naše služby renovace podlah zahrnují broušení, lakování, olejování nebo voskování podle vašich 
-                  požadavků. Používáme pouze certifikované materiály šetrné ke zdraví i životnímu prostředí.
+                  Naše služby renovace podlah zahrnují několika krokové broušení, tmelení, lakování nebo olejování podle vašich požadavků. Používáme pouze ověřené a certifikované materiály.
                 </p>
                 <div className="space-y-3">
                   {process.map((step, index) => (
@@ -96,7 +93,7 @@ const RenovacePodlah = () => {
                     <TableBody>
                       <TableRow>
                         <TableCell>Broušení parket</TableCell>
-                        <TableCell className="text-right">od 330 Kč/m²</TableCell>
+                        <TableCell className="text-right">od 360 Kč/m²</TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>Tmelení</TableCell>
@@ -104,7 +101,7 @@ const RenovacePodlah = () => {
                       </TableRow>
                       <TableRow>
                         <TableCell>Nanesení ochranné vrstvy - olej/lak (2 vrstvy)</TableCell>
-                        <TableCell className="text-right">310 Kč/m²</TableCell>
+                        <TableCell className="text-right">330 Kč/m²</TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
@@ -123,8 +120,7 @@ const RenovacePodlah = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Úspora nákladů</h3>
                   <p className="text-muted-foreground">
-                    Renovace podlah Praha je ekonomicky výhodnější než výměna za nové. Ušetříte až 70 % nákladů 
-                    oproti kompletní výměně podlahy.
+                    Renovace podlah je ekonomicky výhodnější než výměna za nové.
                   </p>
                 </CardContent>
               </Card>
@@ -133,7 +129,7 @@ const RenovacePodlah = () => {
                   <h3 className="text-xl font-semibold mb-3">Zachování kvality</h3>
                   <p className="text-muted-foreground">
                     Staré dřevěné podlahy jsou často kvalitnější než moderní materiály. Renovací zachováte 
-                    původní charakter a hodnotu vašeho interiéru.
+                    původní charakter.
                   </p>
                 </CardContent>
               </Card>
