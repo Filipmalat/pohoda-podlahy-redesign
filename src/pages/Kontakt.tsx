@@ -6,11 +6,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const Kontakt = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,16 +20,33 @@ const Kontakt = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Pro demonstraci - v produkci by zde bylo odeslání na server nebo e-mail
-    toast({
-      title: "Zpráva odeslána!",
-      description: "Děkujeme za váš zájem. Ozveme se vám do 24 hodin.",
-    });
-    
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Zpráva odeslána!",
+        description: "Děkujeme za váš zájem. Ozveme se vám do 24 hodin.",
+      });
+      
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Chyba při odesílání",
+        description: "Zkuste to prosím znovu nebo nás kontaktujte telefonicky.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -198,8 +217,8 @@ const Kontakt = () => {
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full">
-                        Odeslat zprávu
+                      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                        {isSubmitting ? "Odesílám..." : "Odeslat zprávu"}
                       </Button>
 
                       <p className="text-sm text-muted-foreground text-center">
