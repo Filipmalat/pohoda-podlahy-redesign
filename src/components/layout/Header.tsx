@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
+import fivaLogo from "@/assets/fiva-logo.png.asset.json";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +12,8 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary">DOMÁCÍ POHODA</span>
+          <Link to="/" className="flex items-center">
+            <img src={fivaLogo.url} alt="FIVA podlahy" className="h-10 md:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
