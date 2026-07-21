@@ -1,61 +1,9 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const Kontakt = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData,
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Zpráva odeslána!",
-        description: "Děkujeme za váš zájem. Ozveme se vám do 24 hodin.",
-      });
-      
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error("Error sending message:", error);
-      toast({
-        title: "Chyba při odesílání",
-        description: "Zkuste to prosím znovu nebo nás kontaktujte telefonicky.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -67,7 +15,7 @@ const Kontakt = () => {
               <h1 className="text-5xl font-bold mb-6">Kontaktujte nás</h1>
               <p className="text-xl opacity-90">
                 Máte zájem o naše služby nebo chcete nezávaznou cenovou nabídku? 
-                Ozvěte se nám telefonicky, e-mailem nebo vyplňte kontaktní formulář.
+                Ozvěte se nám telefonicky nebo e-mailem.
               </p>
             </div>
           </div>
@@ -75,8 +23,7 @@ const Kontakt = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              {/* Kontaktní informace */}
+            <div className="max-w-3xl mx-auto">
               <div>
                 <h2 className="text-3xl font-bold mb-8">Kontaktní údaje</h2>
                 <div className="space-y-6">
@@ -124,22 +71,6 @@ const Kontakt = () => {
                       </div>
                     </CardContent>
                   </Card>
-
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <Clock className="h-6 w-6 text-primary mt-1" />
-                        <div>
-                          <h3 className="font-semibold mb-2">Dostupnost</h3>
-                          <p className="text-muted-foreground">
-                            Po-Pá: 7:00 - 18:00<br />
-                            So: 8:00 - 14:00<br />
-                            Ne: Po domluvě
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
                 </div>
 
                 <Card className="mt-8 bg-section">
@@ -152,80 +83,6 @@ const Kontakt = () => {
                     <p className="text-sm text-muted-foreground">
                       Pro urgentní případy nás prosím kontaktujte telefonicky.
                     </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Kontaktní formulář */}
-              <div>
-                <h2 className="text-3xl font-bold mb-8">Napište nám</h2>
-                <Card>
-                  <CardContent className="p-6">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div>
-                        <Label htmlFor="name">Jméno a příjmení *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Jan Novák"
-                          className="mt-2"
-                        />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="email">E-mail *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="jan.novak@email.cz"
-                          className="mt-2"
-                        />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="phone">Telefon *</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="+420 123 456 789"
-                          className="mt-2"
-                        />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="message">Zpráva *</Label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          required
-                          value={formData.message}
-                          onChange={handleChange}
-                          placeholder="Popište váš dotaz nebo požadavek..."
-                          className="mt-2 min-h-[150px]"
-                        />
-                      </div>
-
-                      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                        {isSubmitting ? "Odesílám..." : "Odeslat zprávu"}
-                      </Button>
-
-                      <p className="text-sm text-muted-foreground text-center">
-                        Odesláním formuláře souhlasíte se zpracováním osobních údajů 
-                        pro účely komunikace a poskytnutí cenové nabídky.
-                      </p>
-                    </form>
                   </CardContent>
                 </Card>
               </div>
