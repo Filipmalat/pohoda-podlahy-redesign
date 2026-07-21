@@ -122,7 +122,7 @@ const Index = () => {
                 <Sparkles className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-2xl font-semibold mb-4">Chcete nezávaznou cenovou nabídku?</h3>
                 <p className="text-muted-foreground mb-6">
-                  Kontaktujte nás telefonicky nebo vyplňte formulář a my se vám ozveme do 24 hodin.
+                  Kontaktujte nás telefonicky nebo e-mailem a my se vám ozveme do 24 hodin.
                 </p>
                 <div className="space-y-3">
                   <a href="tel:+420736673508" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
@@ -157,11 +157,11 @@ const Index = () => {
                   Zavolejte nám
                 </Button>
               </a>
-              <Link to="/kontakt">
+              <a href="mailto:domacipohoda.kontakt@gmail.com">
                 <Button variant="outline" size="xl" className="bg-background text-foreground hover:bg-background/90">
                   Napište nám
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
