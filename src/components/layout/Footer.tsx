@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* O společnosti */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">DOMÁCÍ POHODA</h3>
+            <img src={fivaLogo.url} alt="FIVA podlahy" className="h-10 w-auto mb-4" />
             <p className="text-muted-foreground text-sm">
               Profesionální renovace podlah, pokládka vinylové podlahy a laminátu, 
               broušení parket v Praze a okolí.
