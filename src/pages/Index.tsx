@@ -133,9 +133,9 @@ const Index = () => {
                     <Phone className="h-4 w-4" />
                     +420 734 133 866 (Václav Čížek)
                   </a>
-                  <a href="mailto:domacipohoda.kontakt@gmail.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                  <a href="mailto:fivapodlahy@gmail.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                     <Mail className="h-4 w-4" />
-                    domacipohoda.kontakt@gmail.com
+                    fivapodlahy@gmail.com
                   </a>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Index = () => {
                   Zavolejte nám
                 </Button>
               </a>
-              <a href="mailto:domacipohoda.kontakt@gmail.com">
+              <a href="mailto:fivapodlahy@gmail.com">
                 <Button variant="outline" size="xl" className="bg-background text-foreground hover:bg-background/90">
                   Napište nám
                 </Button>
