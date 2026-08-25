@@ -189,7 +189,7 @@ const NasePrace = () => {
                   Zavolejte nám
                 </Button>
               </a>
-              <a href="mailto:domacipohoda.kontakt@gmail.com">
+              <a href="mailto:fivapodlahy@gmail.com">
                 <Button variant="outline" size="xl" className="bg-background text-foreground hover:bg-background/90">
                   Napište nám
                 </Button>
