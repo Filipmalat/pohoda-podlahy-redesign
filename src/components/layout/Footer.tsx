@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import fivaLogo from "@/assets/fiva-logo-new.png.asset.json";
+import fivaLogo from "@/assets/fiva-logo-transparent.png.asset.json";
 
 const Footer = () => {
   return (
