@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import fivaLogo from "@/assets/fiva-logo.png.asset.json";
+import fivaLogo from "@/assets/fiva-logo-new.png.asset.json";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
